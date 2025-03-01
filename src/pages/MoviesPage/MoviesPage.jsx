@@ -13,9 +13,25 @@ const MoviesPage = () => {
     //move search by api
   }, [movieSearchValue]);
 
+  const updateQueryString = (query) => {
+    const nextParams = query !== "" ? { query } : {};
+    setSearchParams(nextParams);
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const inputValue = form.elements.input.value;
+    if (inputValue === "") {
+      alert("Please enter a value!");
+    }
+    updateQueryString(inputValue);
+    form.reset();
+  };
+
   return (
     <main>
-      <form>
+      <form onSubmit={handleFormSubmit}>
         <input type="text" name="input" />
         <button type="submit">Search</button>
       </form>

@@ -8,14 +8,16 @@ import Navigation from "../Navigation/Navigation";
 
 function App() {
   return (
-    <div className={css.container}>
+    <>
       <Navigation />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/movies" element={<MoviesPage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-    </div>
+      <div className={css.container}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/movies" element={<MoviesPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </div>
+    </>
   );
 }
 

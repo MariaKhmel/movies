@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
+import fetchMoviesByName from "../../api/fetchMoviesByName";
 
 const MoviesPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -9,6 +10,8 @@ const MoviesPage = () => {
     if (movieSearchValue === null) {
       return;
     }
+
+    const movies = fetchMoviesByName(movieSearchValue);
 
     //move search by api
   }, [movieSearchValue]);

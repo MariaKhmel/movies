@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import fetchMoviesByName from "../../api/fetchMoviesByName";
 import MovieList from "../../components/MovieList/MovieList";
+import css from "./MoviesPage.module.css";
 
 const MoviesPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -42,7 +43,7 @@ const MoviesPage = () => {
 
   return (
     <main>
-      <form onSubmit={handleFormSubmit}>
+      <form className={css.form} onSubmit={handleFormSubmit}>
         <input type="text" name="input" />
         <button type="submit">Search</button>
       </form>

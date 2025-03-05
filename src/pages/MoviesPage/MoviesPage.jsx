@@ -10,10 +10,12 @@ const MoviesPage = () => {
     if (movieSearchValue === null) {
       return;
     }
+    const handleSearch = async () => {
+      const movies = await fetchMoviesByName(movieSearchValue);
+      console.log(movies);
+    };
 
-    const movies = fetchMoviesByName(movieSearchValue);
-
-    //move search by api
+    handleSearch();
   }, [movieSearchValue]);
 
   const updateQueryString = (query) => {

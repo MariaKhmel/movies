@@ -13,8 +13,12 @@ const MoviesPage = () => {
       return;
     }
     const handleSearch = async () => {
-      const movies = await fetchMoviesByName(movieSearchValue);
-      setMovies(movies.results);
+      try {
+        const movies = await fetchMoviesByName(movieSearchValue);
+        setMovies(movies.results);
+      } catch (error) {
+        console.log(error);
+      }
     };
 
     handleSearch();

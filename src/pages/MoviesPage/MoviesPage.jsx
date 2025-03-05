@@ -1,10 +1,12 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import fetchMoviesByName from "../../api/fetchMoviesByName";
+import MovieList from "../../components/MovieList/MovieList";
 
 const MoviesPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const movieSearchValue = searchParams.get("query") || "";
+  const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     if (movieSearchValue === null) {
@@ -12,7 +14,7 @@ const MoviesPage = () => {
     }
     const handleSearch = async () => {
       const movies = await fetchMoviesByName(movieSearchValue);
-      console.log(movies);
+      setMovies(movies.results);
     };
 
     handleSearch();
@@ -40,6 +42,7 @@ const MoviesPage = () => {
         <input type="text" name="input" />
         <button type="submit">Search</button>
       </form>
+      {movieSearchValue && <MovieList movies={movies} />}
     </main>
   );
 };

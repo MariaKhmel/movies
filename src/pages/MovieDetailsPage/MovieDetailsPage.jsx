@@ -1,20 +1,20 @@
-import { NavLink } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 const MovieDetailsPage = ({ movie }) => {
   return (
-    <section>
+    <main>
       <div>
         <img />
         <div></div>
       </div>
       <div>
         <p>Additional information</p>
-        <NavLink>Cast</NavLink>
-        <NavLink>Reviews</NavLink>
+        <Link to="cast">Cast</Link>
+        <Link to="reviews">Reviews</Link>
       </div>
-    </section>
+      <Outlet />
+    </main>
   );
 };
 
 export default MovieDetailsPage;
-// MovieCast і MovieReviews

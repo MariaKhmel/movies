@@ -1,7 +1,10 @@
-import { Link, Outlet } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, Outlet, useParams } from "react-router-dom";
 
-const MovieDetailsPage = ({ movie }) => {
-  // const { title } = movie;
+const MovieDetailsPage = () => {
+  const { movieId } = useParams();
+
+  useEffect(() => {}, [movieId]);
   return (
     <main>
       <div>

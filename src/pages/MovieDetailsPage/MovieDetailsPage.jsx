@@ -1,22 +1,25 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link, Outlet, useParams } from "react-router-dom";
 import fetchMovieById from "../../api/fetchMobieById";
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
+  const [movie, setMovie] = useState({});
 
   useEffect(() => {
     const handleSearch = async () => {
-      const movie = fetchMovieById(movieId);
-      console.log(movie);
+      const movie = await fetchMovieById(movieId);
+      setMovie(movie);
     };
+
+    handleSearch();
   }, [movieId]);
   return (
     <main>
       <div>
         <img />
         <div>
-          {/* <p>{title}</p> */}
+          <p>{movie.title}</p>
           <p>User score : {}</p>
           <p>Overview</p>
           <p>Genres</p>

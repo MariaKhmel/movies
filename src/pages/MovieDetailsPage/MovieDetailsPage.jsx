@@ -12,6 +12,8 @@ const MovieDetailsPage = () => {
         <div>
           {/* <p>{title}</p> */}
           <p>User score : {}</p>
+          <p>Overview</p>
+          <p>Genres</p>
         </div>
       </div>
       <div>

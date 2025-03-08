@@ -1,10 +1,16 @@
 import { useEffect } from "react";
 import { Link, Outlet, useParams } from "react-router-dom";
+import fetchMovieById from "../../api/fetchMobieById";
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
 
-  useEffect(() => {}, [movieId]);
+  useEffect(() => {
+    const handleSearch = async () => {
+      const movie = fetchMovieById(movieId);
+      console.log(movie);
+    };
+  }, [movieId]);
   return (
     <main>
       <div>

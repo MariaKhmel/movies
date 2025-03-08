@@ -11,5 +11,7 @@ const options = {
 }
 
 const fetchMovieById = movieId => {
-  return fetch(`${baseUrl}/movieId`, options).then(res => res.json()).then(data => data)
+  return fetch(`${baseUrl}/${movieId}`, options).then(res => res.json()).then(data => data)
 }
+
+export default fetchMovieById;

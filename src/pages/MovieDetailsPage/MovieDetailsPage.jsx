@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link, Outlet, useParams } from "react-router-dom";
 import fetchMovieById from "../../api/fetchMobieById";
+import Genres from "../../components/Genres/Genres";
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState({});
+  const { title, overview } = movie;
 
   useEffect(() => {
     const handleSearch = async () => {
@@ -19,10 +21,12 @@ const MovieDetailsPage = () => {
       <div>
         <img />
         <div>
-          <p>{movie.title}</p>
+          <p>{title}</p>
           <p>User score : {}</p>
           <p>Overview</p>
+          <p>{overview}</p>
           <p>Genres</p>
+          <Genres />
         </div>
       </div>
       <div>

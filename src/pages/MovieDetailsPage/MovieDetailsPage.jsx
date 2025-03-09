@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, Outlet, useParams } from "react-router-dom";
 import fetchMovieById from "../../api/fetchMobieById";
-import Genres_temp from "../../components/Genres/Genres_temp";
+import Genres from "../../components/Genres/Genres_temp";
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
@@ -16,6 +16,7 @@ const MovieDetailsPage = () => {
 
     handleSearch();
   }, [movieId]);
+
   return (
     <main>
       <div>
@@ -26,7 +27,7 @@ const MovieDetailsPage = () => {
           <p>Overview</p>
           <p>{overview}</p>
           <p>Genres</p>
-          <Genres_temp />
+          <Genres />
         </div>
       </div>
       <div>

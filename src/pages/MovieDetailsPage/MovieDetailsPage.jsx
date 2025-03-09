@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, Outlet, useParams } from "react-router-dom";
 import fetchMovieById from "../../api/fetchMobieById";
-import Genres from "../../components/Genres/Genres";
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();

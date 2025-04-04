@@ -6,11 +6,13 @@ import Genres from "../../components/Genres/Genres";
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState({});
+  const [genresList, setGenresList] = useState([]);
 
   useEffect(() => {
     const handleSearch = async () => {
       const movie = await fetchMovieById(movieId);
       setMovie(movie);
+      setGenresList(movie.genres);
     };
 
     handleSearch();
@@ -26,7 +28,7 @@ const MovieDetailsPage = () => {
           <p>Overview</p>
           <p>{movie.overview}</p>
           <p>Genres</p>
-          <Genres genres={movie.genres} />
+          <Genres genres={genresList} />
         </div>
       </div>
       <div>

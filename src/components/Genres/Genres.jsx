@@ -1,6 +1,8 @@
+import css from "./Genres.module.css";
+
 const Genres = ({ genres }) => {
   return (
-    <ul>
+    <ul className={css.genresList}>
       {genres.map((el) => (
         <li key={el.id}>
           <p>{el.name}</p>

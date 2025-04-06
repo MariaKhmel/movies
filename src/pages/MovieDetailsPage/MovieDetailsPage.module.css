@@ -1,3 +1,8 @@
 .highlightTitle {
   font-weight: 700;
 }
+
+.movieInfo {
+  padding-bottom: 7px;
+  border-bottom: 1px solid grey;
+}

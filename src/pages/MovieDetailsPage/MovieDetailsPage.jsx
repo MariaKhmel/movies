@@ -24,7 +24,7 @@ const MovieDetailsPage = () => {
     <main>
       <div>
         <img />
-        <div>
+        <div className={css.movieInfo}>
           <p className={css.highlightTitle}>{movie.title}</p>
           <p>User score : {}</p>
           <p className={css.highlightTitle}>Overview</p>

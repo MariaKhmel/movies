@@ -3,6 +3,8 @@ import { Link, Outlet, useParams } from "react-router-dom";
 import fetchMovieById from "../../api/fetchMobieById";
 import Genres from "../../components/Genres/Genres";
 
+import css from "./MovieDetailsPage.module.css";
+
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState({});
@@ -23,11 +25,11 @@ const MovieDetailsPage = () => {
       <div>
         <img />
         <div>
-          <p>{movie.title}</p>
+          <p className={css.highlightTitle}>{movie.title}</p>
           <p>User score : {}</p>
-          <p>Overview</p>
+          <p className={css.highlightTitle}>Overview</p>
           <p>{movie.overview}</p>
-          <p>Genres</p>
+          <p className={css.highlightTitle}>Genres</p>
           <Genres genres={genresList} />
         </div>
       </div>

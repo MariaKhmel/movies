@@ -34,6 +34,9 @@ const MovieDetailsPage = () => {
         </div>
       </div>
       <div>
+        <div>
+          <img src={`https://image.tmdb.org/t/p/original/${movie.file_path}`} />
+        </div>
         <p>Additional information</p>
         <Link to="cast">Cast</Link>
         <Link to="reviews">Reviews</Link>

@@ -30,7 +30,8 @@ const MovieDetailsPage = () => {
           <p className={css.highlightTitle}>Overview</p>
           <p>{movie.overview}</p>
           <p className={css.highlightTitle}>Genres</p>
-          <Genres genres={genresList} />
+
+          <Genres genres={movie.genres ? genresList : []} />
         </div>
       </div>
       <div>

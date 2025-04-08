@@ -1,8 +1,18 @@
-.highlightTitle {
-  font-weight: 700;
-}
-
-.movieInfo {
+.movieCard {
+  display: flex;
+  gap: 10px;
   padding-bottom: 7px;
   border-bottom: 1px solid grey;
+}
+
+.posterCard {
+  width: 200px;
+}
+
+.posterCard img {
+  height: 100%;
+  width: 100%;
+}
+.highlightTitle {
+  font-weight: 700;
 }

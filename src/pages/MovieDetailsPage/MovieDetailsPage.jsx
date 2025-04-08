@@ -22,24 +22,23 @@ const MovieDetailsPage = () => {
 
   return (
     <main>
-      <div>
-        <img />
-        <div className={css.movieInfo}>
+      <div className={css.movieCard}>
+        <div className={css.posterCard}>
+          <img
+            src={`https://image.tmdb.org/t/p/original/${movie["poster_path"]}`}
+            alt={movie.title}
+          />
+        </div>
+        <div>
           <p className={css.highlightTitle}>{movie.title}</p>
           <p>User score : {}</p>
           <p className={css.highlightTitle}>Overview</p>
           <p>{movie.overview}</p>
           <p className={css.highlightTitle}>Genres</p>
-
           <Genres genres={movie.genres ? genresList : []} />
         </div>
       </div>
       <div>
-        <div>
-          <img
-            src={`https://image.tmdb.org/t/p/original/${movie["poster_path"]}`}
-          />
-        </div>
         <p>Additional information</p>
         <Link to="cast">Cast</Link>
         <Link to="reviews">Reviews</Link>

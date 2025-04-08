@@ -21,6 +21,7 @@ const MovieDetailsPage = () => {
   }, [movieId]);
 
   return (
+        const { imgPath } = movie;
     <main>
       <div>
         <img />
@@ -35,7 +36,7 @@ const MovieDetailsPage = () => {
       </div>
       <div>
         <div>
-          <img src={`https://image.tmdb.org/t/p/original/${movie.file_path}`} />
+          <img src={`https://image.tmdb.org/t/p/original/${imgPath}`} />
         </div>
         <p>Additional information</p>
         <Link to="cast">Cast</Link>

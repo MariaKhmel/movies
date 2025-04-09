@@ -19,7 +19,7 @@ const MovieDetailsPage = () => {
 
     handleSearch();
   }, [movieId]);
-
+  const { title, overview, genres } = movie;
   return (
     <main>
       <div className={css.movieCard}>
@@ -30,12 +30,12 @@ const MovieDetailsPage = () => {
           />
         </div>
         <div>
-          <p className={css.highlightTitle}>{movie.title}</p>
+          <p className={css.highlightTitle}>{title}</p>
           <p>User score : {}</p>
           <p className={css.highlightTitle}>Overview</p>
-          <p>{movie.overview}</p>
+          <p>{overview}</p>
           <p className={css.highlightTitle}>Genres</p>
-          <Genres genres={movie.genres ? genresList : []} />
+          <Genres genres={genres ? genresList : []} />
         </div>
       </div>
       <div>

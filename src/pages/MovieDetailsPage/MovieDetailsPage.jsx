@@ -19,7 +19,9 @@ const MovieDetailsPage = () => {
 
     handleSearch();
   }, [movieId]);
-  const { title, overview, genres } = movie;
+  const { title, overview, genres, vote_average } = movie;
+  const roundedScore = Math.round(vote_average * 10);
+
   return (
     <main>
       <div className={css.movieCard}>
@@ -31,7 +33,7 @@ const MovieDetailsPage = () => {
         </div>
         <div>
           <p className={css.highlightTitle}>{title}</p>
-          <p>User score : {}</p>
+          <p>User score : {roundedScore}% </p>
           <p className={css.highlightTitle}>Overview</p>
           <p>{overview}</p>
           <p className={css.highlightTitle}>Genres</p>

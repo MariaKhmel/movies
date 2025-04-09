@@ -19,16 +19,20 @@ const MovieDetailsPage = () => {
 
     handleSearch();
   }, [movieId]);
-  const { title, overview, genres, vote_average } = movie;
+  const { title, overview, genres, vote_average, poster_path } = movie;
   const roundedScore = Math.round(vote_average * 10);
+  const defaultPoster =
+    "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png";
 
   return (
     <main>
       <div className={css.movieCard}>
         <div className={css.posterCard}>
           <img
-            src={`https://image.tmdb.org/t/p/original/${movie["poster_path"]}`}
-            alt={movie.title}
+            src={`https://image.tmdb.org/t/p/original/${
+              poster_path ?? defaultPoster
+            }`}
+            alt={title}
           />
         </div>
         <div>

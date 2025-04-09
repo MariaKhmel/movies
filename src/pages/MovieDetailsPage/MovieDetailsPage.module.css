@@ -12,6 +12,7 @@
 .posterCard img {
   height: 100%;
   width: 100%;
+  object-fit: cover;
 }
 .highlightTitle {
   font-weight: 700;

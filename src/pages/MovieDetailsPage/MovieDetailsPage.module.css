@@ -17,3 +17,11 @@
 .highlightTitle {
   font-weight: 700;
 }
+
+.additionalInfoBlock {
+  display: block;
+}
+
+.additionalInfoBlock li {
+  list-style-type: disc;
+}

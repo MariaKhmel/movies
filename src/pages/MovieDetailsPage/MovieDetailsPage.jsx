@@ -44,11 +44,15 @@ const MovieDetailsPage = () => {
           <Genres genres={genres ? genresList : []} />
         </div>
       </div>
-      <div>
+      <ul className={css.additionalInfoBlock}>
         <p>Additional information</p>
-        <Link to="cast">Cast</Link>
-        <Link to="reviews">Reviews</Link>
-      </div>
+        <li>
+          <Link to="cast">Cast</Link>
+        </li>
+        <li>
+          <Link to="reviews">Reviews</Link>
+        </li>
+      </ul>
       <Outlet />
     </main>
   );

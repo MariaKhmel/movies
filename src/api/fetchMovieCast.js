@@ -11,5 +11,8 @@ const options = {
 
 
 const fetchMovieCast = (movieId) => {
-  return fetch(`${baseUrl}/${movieId}/credits`, options);
+  return fetch(`${baseUrl}/${movieId}/credits`, options)
+    .then(res => res.json());
 };
+
+export { fetchMovieCast };

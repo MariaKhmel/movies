@@ -1,7 +1,10 @@
 const CastCard = ({ castMember }) => {
+  const { original_name, character, profile_path } = castMember;
   return (
     <div>
-      <p>{castMember.original_name}</p>
+      <img />
+      <p>{original_name}</p>
+      <p>Character:{character}</p>
     </div>
   );
 };

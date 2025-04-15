@@ -19,7 +19,7 @@ const MovieCast = () => {
     getCast();
   }, [movieId]);
 
-  return <div>MovieCast</div>;
+  return <ul></ul>;
 };
 
 export default MovieCast;

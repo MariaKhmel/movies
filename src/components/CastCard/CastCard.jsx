@@ -1,5 +1,5 @@
 import { baseImgUrl, defaultPoster } from "../../helpers/detFullImgPath";
-import css from "../CastCard/CastCard.module.css";
+import css from "./CastCard.module.css";
 
 const CastCard = ({ castMember }) => {
   const { original_name, character, profile_path } = castMember;

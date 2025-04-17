@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchMovieCast } from "../../api/fetchMovieCast";
 import { useParams, useSearchParams } from "react-router-dom";
 import CastCard from "../CastCard/CastCard";
+import css from "./MovieCast.module.css";
 
 const MovieCast = () => {
   const { movieId } = useParams();
@@ -21,12 +22,11 @@ const MovieCast = () => {
   }, [movieId]);
 
   const slicedCast = movieCast.slice(0, 5);
-  console.log(slicedCast);
 
   return (
     <ul>
       {slicedCast.map((el) => (
-        <li key={el.id}>
+        <li key={el.id} className={css.card}>
           <CastCard castMember={el} />
         </li>
       ))}

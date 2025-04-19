@@ -11,7 +11,7 @@ const CastCard = ({ castMember }) => {
         src={`${baseImgUrl}${profile_path ?? defaultPoster}`}
       />
       <p>{original_name}</p>
-      <p>Character:{character}</p>
+      <p>Character: {character}</p>
     </div>
   );
 };

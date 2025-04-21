@@ -4,12 +4,12 @@ import { fetchReviews } from "../../api/fetchREviews";
 
 const MovieReviews = () => {
   const { movieId } = useParams();
-  const [cast, setCast] = useState();
+  const [reviews, setReviews] = useState();
 
   useEffect(() => {
     const getMovieCast = async () => {
       const reviews = await fetchReviews(movieId);
-      setCast(reviews.results);
+      setReviews(reviews.results);
     };
     getMovieCast();
   }, [movieId]);
@@ -17,7 +17,7 @@ const MovieReviews = () => {
   return (
     <div>
       <ul>
-        {cast.map((el) => (
+        {reviews.map((el) => (
           <li key={el.id}></li>
         ))}
       </ul>

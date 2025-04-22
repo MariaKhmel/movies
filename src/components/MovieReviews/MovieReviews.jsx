@@ -13,16 +13,6 @@ const MovieReviews = () => {
     };
     getMovieCast();
   }, [movieId]);
-
-  return (
-    <div>
-      <ul>
-        {reviews.map((el) => (
-          <li key={el.id}></li>
-        ))}
-      </ul>
-    </div>
-  );
 };
 
 export default MovieReviews;

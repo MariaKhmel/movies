@@ -4,12 +4,16 @@ import { fetchReviews } from "../../api/fetchREviews";
 
 const MovieReviews = () => {
   const { movieId } = useParams();
-  const [reviews, setReviews] = useState();
+  const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
     const getMovieCast = async () => {
-      const reviews = await fetchReviews(movieId);
-      setReviews(reviews.results);
+      try {
+        const reviews = await fetchReviews(movieId);
+        setReviews(reviews.results);
+      } catch (error) {
+        console.log(error);
+      }
     };
     getMovieCast();
   }, [movieId]);

@@ -1,8 +1,9 @@
 import { baseUrl, options } from "./apiConfig";
 
 const fetchReviews = (movieId) => {
-  return fetch(`${baseUrl}/${movieId}/reviews?language=en-US&page=1`, options)
+  return fetch(`https://api.themoviedb.org/3/movie/${movieId}/reviews`, options)
     .then(res => res.json())
+
 }
 
 export { fetchReviews };

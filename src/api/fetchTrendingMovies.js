@@ -1,4 +1,4 @@
-import { baseUrl, options } from "./apiConfig";
+import { options } from "./apiConfig";
 
 const fetchTrendingMovies = () => {
   return fetch('https://api.themoviedb.org/3/trending/movie/day?language=en-US', options)

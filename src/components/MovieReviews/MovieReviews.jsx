@@ -22,7 +22,7 @@ const MovieReviews = () => {
   return (
     <div>
       {reviews.length > 0 ? (
-        <ReviewsList />
+        <ReviewsList reviews={reviews} />
       ) : (
         <p>We do not have any reviews for this movie</p>
       )}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchReviews } from "../../api/fetchREviews";
+import ReviewsList from "../ReviewsList/ReviewsList";
 
 const MovieReviews = () => {
   const { movieId } = useParams();
@@ -20,11 +21,11 @@ const MovieReviews = () => {
 
   return (
     <div>
-      <ul>
-        {reviews.map((el) => (
-          <li key={el.id}></li>
-        ))}
-      </ul>
+      {reviews.length > 0 ? (
+        <ReviewsList />
+      ) : (
+        <p>We do not have any reviews for this movie</p>
+      )}
     </div>
   );
 };

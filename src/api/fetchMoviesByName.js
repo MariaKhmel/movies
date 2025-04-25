@@ -1,7 +1,7 @@
 import { baseUrl, options } from "./apiConfig";
 
 const fetchMoviesByName = (query) => {
-  return fetch(`${baseUrl}&page=1&query=${query}`, options)
+  return fetch(`https://api.themoviedb.org/3/search/movie?page=1&query=${query}`, options)
     .then(res => res.json())
     .then(data => data)
     .catch(error => console.log(error));

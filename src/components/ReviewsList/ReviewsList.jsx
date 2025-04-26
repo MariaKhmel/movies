@@ -1,3 +1,4 @@
+import { trimContent } from "../../helpers/trimContent";
 import css from "./ReviewsList.module.css";
 
 const ReviewsList = ({ reviews }) => {
@@ -6,7 +7,7 @@ const ReviewsList = ({ reviews }) => {
       {reviews.map((el) => (
         <li key={el.id} className={css.reviewItem}>
           <p>{el.author_details.name}</p>
-          <p>{el.content}</p>
+          <p>{trimContent(el.content)}</p>
         </li>
       ))}
     </ul>

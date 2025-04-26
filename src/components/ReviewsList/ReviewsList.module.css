@@ -1,3 +1,7 @@
 .reviewItem:not(:last-child) {
   margin-bottom: 10px;
 }
+
+.reviewItem {
+  list-style: disc;
+}
